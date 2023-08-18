@@ -85,6 +85,20 @@ RSpec.describe 'Users' do
         data = response.parsed_body
         expect(data.pluck('first_name')).to eq(%w[Jeremy Cory])
       end
+
+      it 'returns a 400 when passing an out of range limit param' do
+        get '/api/users/clerks',
+            params: { limit: 200 }
+
+        expect(response).to have_http_status(:bad_request)
+      end
+
+      it 'returns a 400 when passing an invalid user id' do
+        get '/api/users/clerks',
+            params: { starting_after: 999 }
+
+        expect(response).to have_http_status(:bad_request)
+      end
     end
   end
 end
