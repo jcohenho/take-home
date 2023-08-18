@@ -3,11 +3,13 @@
 class Cursor
   attr_reader :starting_after, :ending_before, :email, :limit
 
+  DEFAULT_LIMIT = 10
+
   def initialize(opts = {})
     @starting_after = opts[:starting_after]
     @ending_before = opts[:ending_before]
     @email = opts[:email]
-    @limit = opts.fetch(:limit, 10).to_i
+    @limit = opts.fetch(:limit, DEFAULT_LIMIT).to_i
   end
 
   def call
