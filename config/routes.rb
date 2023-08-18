@@ -3,7 +3,10 @@
 Rails.application.routes.draw do
   namespace :api do
     resources :users, only: [] do
-      post 'populate', on: :collection
+      collection do
+        post 'populate'
+        get 'clerks'
+      end
     end
   end
 end
