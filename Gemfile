@@ -25,6 +25,10 @@ group :development, :test do
   gem 'debug', platforms: %i[mri mingw x64_mingw]
   # Rspec testing framework https://github.com/rspec/rspec-rails
   gem 'rspec-rails', '~> 6.0.0'
+  # Fixtures framework https://github.com/thoughtbot/factory_bot_rails
+  gem 'factory_bot_rails'
+  # Library for generating fake test data https://github.com/faker-ruby/faker
+  gem 'faker'
 end
 
 group :development do
