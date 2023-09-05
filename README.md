@@ -29,6 +29,82 @@ Optional params are:
 
 See the [exercise specs](https://github.com/hatchways-community/0afea290653f4f90a494c37db9874358/blob/dev/docs/README.md) for more details on these params.
 
+### Sample request
+
+`GET http://localhost:3000/api/users/clerks?starting_after=274&ending_before=953`
+
+The request above will return users that registered after the user with ID 274 and before the user with ID 953.
+
+The users in question:
+
+```json
+{
+  "id": 274,
+  "first_name": "Francisco",
+  "last_name": "Leyva",
+  "email": "francisco.leyva@example.com",
+  "phone_number": "(667) 656 1977",
+  "picture": "https://randomuser.me/api/portraits/thumb/men/8.jpg",
+  "registered_at": "2022-05-07T17:53:02.022Z",
+  "created_at": "2023-09-05T18:18:12.489Z",
+  "updated_at": "2023-09-05T18:18:12.489Z"
+}
+```
+
+```json
+{
+  "id": 953,
+  "first_name": "Zoe",
+  "last_name": "Willis",
+  "email": "zoe.willis@example.com",
+  "phone_number": "016973 12472",
+  "picture": "https://randomuser.me/api/portraits/thumb/women/3.jpg",
+  "registered_at": "2022-05-17T00:35:17.049Z",
+  "created_at": "2023-09-05T18:18:16.539Z",
+  "updated_at": "2023-09-05T18:18:16.539Z"
+}
+```
+
+### Sample response
+
+```json
+[
+  {
+    "id": 4711,
+    "first_name": "رادین",
+    "last_name": "علیزاده",
+    "email": "rdyn.aalyzdh@example.com",
+    "phone_number": "041-84883384",
+    "picture": "https://randomuser.me/api/portraits/thumb/men/21.jpg",
+    "registered_at": "2022-05-13T21:01:17.544Z",
+    "created_at": "2023-09-05T18:18:37.740Z",
+    "updated_at": "2023-09-05T18:18:37.740Z"
+  },
+  {
+    "id": 576,
+    "first_name": "Arjun",
+    "last_name": "Shroff",
+    "email": "arjun.shroff@example.com",
+    "phone_number": "8778719710",
+    "picture": "https://randomuser.me/api/portraits/thumb/men/18.jpg",
+    "registered_at": "2022-05-12T00:36:47.552Z",
+    "created_at": "2023-09-05T18:18:14.262Z",
+    "updated_at": "2023-09-05T18:18:14.262Z"
+  },
+  {
+    "id": 4162,
+    "first_name": "Stach",
+    "last_name": "Van Hoof",
+    "email": "stach.vanhoof@example.com",
+    "phone_number": "(0512) 643071",
+    "picture": "https://randomuser.me/api/portraits/thumb/men/64.jpg",
+    "registered_at": "2022-05-09T06:09:24.590Z",
+    "created_at": "2023-09-05T18:18:34.631Z",
+    "updated_at": "2023-09-05T18:18:34.631Z"
+  }
+]
+```
+
 ## Testing
 
 The tests use the [Rspec](https://rspec.info/) framework. The following command will run the test suite:
